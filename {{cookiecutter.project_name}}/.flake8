@@ -10,5 +10,5 @@ ignore = E203
 # optimized byte code. You should disable this warning for your test suite, as Pytest uses assertions to verify
 # expectations in tests
 per-file-ignores =
-    tests/*:S101,ANN
+    test/*:S101,ANN
     noxfile.py:ANN

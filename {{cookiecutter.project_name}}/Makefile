@@ -34,11 +34,11 @@ thorough: lint mypy  ## the full treatment: black check, flake8, mypy, and safet
 
 .PHONY: test
 test: mypy  ## run tests after running black check, flake8, and mypy
-	poetry run nox -rs {{cookiecutter.package_name}}/test
+	PYTHONPATH=src poetry run nox -rs test
 
 .PHONY: cov
 cov:  ## run test coverage report
-	poetry run pytest tests --cov
+	PYTHONPATH=src poetry run pytest tests --cov
 
 .PHONY: clean
 clean:  ## clean up project

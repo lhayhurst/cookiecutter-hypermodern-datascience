@@ -28,3 +28,11 @@ This file has some standard config files:
 * the [noxfile.py](noxfile.py) contains nox targets for running `safety` and your `tests`. It uses the [nox-poetry](https://pypi.org/project/nox-poetry/) project for nox-poetry integration.
 * The [.flake8](.flake8) has a minimal [flake8](https://flake8.pycqa.org/en/latest/) configuration.
 * The [mypy.ini](mypy.ini) has a minimal [mypy](http://mypy-lang.org/) configuration.
+
+## Adding a new python dependency
+
+By way of example, you want to add scipy. Then you simply run:
+
+```bash
+poetry add scipy
+```

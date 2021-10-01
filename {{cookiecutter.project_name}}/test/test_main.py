@@ -1,6 +1,7 @@
 """Test cases for the __main__ module."""
-import pytest
 from click.testing import CliRunner
+
+import pytest
 
 from {{cookiecutter.package_name}} import __main__
 
