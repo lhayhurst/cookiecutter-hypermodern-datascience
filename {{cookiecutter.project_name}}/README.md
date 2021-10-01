@@ -1,3 +1,5 @@
+![Build Status](https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.github_project_name}}/actions/workflows/python-app.yml/badge.svg)
+
 # {{cookiecutter.project_name}}
 {{cookiecutter.description}}
 
