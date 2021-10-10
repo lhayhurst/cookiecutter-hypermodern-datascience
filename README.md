@@ -1,4 +1,4 @@
-# modern-python-datascience-cookiecutter
+# cookiecutter-hypermodern-python-datascience
 
 This [cookiecutter](https://cookiecutter.readthedocs.io/) project is a [Make](https://www.gnu.org/software/make/)-friendly, Github Actions
 CI/CD [batteries included](.github/workflows/python-app.yml) starter Python project that
