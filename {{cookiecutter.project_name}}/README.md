@@ -21,6 +21,21 @@ make clean
 
 Will clean out your install. 
 
+## Other make targets
+Run `make` to get them: 
+
+```shell
+make     
+black                          reformat all files for black. good for when someone else needs to read your code.
+clean                          clean up project
+cov                            run test coverage report
+help                           me
+lint                           run flake8 linter
+safety                         check for open source vulnerabilities with safety
+test                           run tests after running black check, flake8, and mypy
+thorough                       the full treatment: black check, flake8, mypy, and safety
+```
+
 ## Configuration
 
 This file has some standard config files:
@@ -37,4 +52,23 @@ By way of example, you want to add scipy. Then you simply run:
 
 ```bash
 poetry add scipy
+```
+
+## Running main
+Run ```sh
+ PYTHONPATH=src poetry run python -m {{cookiecutter.project_name}} --help
+Usage: python -m {{cookiecutter.project_name}} [OPTIONS] COMMAND [ARGS]...
+
+Options:
+  --install-completion [bash|zsh|fish|powershell|pwsh]
+                                  Install completion for the specified shell.
+  --show-completion [bash|zsh|fish|powershell|pwsh]
+                                  Show completion for the specified shell, to
+                                  copy it or customize the installation.
+  --help                          Show this message and exit.
+
+Commands:
+  about
+  version
+
 ```

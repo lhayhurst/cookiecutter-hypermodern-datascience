@@ -4,7 +4,7 @@ import sys
 
 import typer
 
-from {{cookiecutter.package_name}} import __version__ as main_version
+from foo import __version__ as main_version
 
 app = typer.Typer()
 

@@ -1,9 +1,9 @@
 [flake8]
 application-import-names =  {{cookiecutter.package_name}},test
-max-line-length = 103
+max-line-length = 121
 select = ANN,B,B9,BLK,C,E,F,I,S,W
 max-complexity = 10
-ignore = E203
+ignore = E203,BLK100
 
 # From https://cjolowicz.github.io/posts/hypermodern-python-03-linting/
 # Bandit flags uses of assert to enforce interface constraints because assertions are removed when compiling to
