@@ -8,10 +8,19 @@ K := $(foreach exec,$(EXECUTABLES),\
 help: ## me
 	@grep -E '^[0-9a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-.PHONY: deps  ## do a full install
-deps:
+.PHONY: deps
+deps:  ## do a full install. run this first!
 	poetry install
 	poetry run nox --install-only
+
+.PHONY: jupyterlab
+jupyterlab: .jupyterlab-built  ## run jupyterlab
+	PYTHONPATH=src poetry run jupyter lab
+
+.jupyterlab-built:  ## file for marking a successful jupyterlab build, so we don't build it over and over again
+	PYTHONPATH=src poetry run jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter-matplotlib
+	PYTHONPATH=src poetry run jupyter lab build
+	touch .jupyterlab-built
 
 .PHONY: black
 black:  ## reformat all files for black. good for when someone else needs to read your code.
@@ -42,7 +51,7 @@ cov:  ## run test coverage report
 
 .PHONY: clean
 clean:  ## clean up project
-	rm -rf dist .nox .coverage .mypy_cache .pytest_cache .coverage src/effectivepy.egg-info
+	rm -rf .jupyterlab-built dist .nox .coverage .mypy_cache .pytest_cache .coverage src/effectivepy.egg-info
 
 
 

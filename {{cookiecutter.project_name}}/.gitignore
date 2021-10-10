@@ -4,7 +4,7 @@
 
 *.xml
 
-.idea/
+.idea/*
 
 Distutils.egg-info/
 

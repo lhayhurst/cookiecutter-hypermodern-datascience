@@ -6,7 +6,7 @@ combines [Poetry](https://python-poetry.org/docs/) and [Nox](https://nox.thea.co
 inspired by Claudio Jolowicz's [Hypermodern Python](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/)
 article series.
 
-At present, it includes numpy and pandas for data science packages. In the future, it will include jupyterlab.
+At present, it includes numpy, pandas and jupyterlab for data science packages.
 
 Run:
 
@@ -14,4 +14,12 @@ Run:
  cookiecutter https://github.com/lhayhurst/modern-python-datascience-cookiecutter.git
  ```
 
-To use it.
+To use it. Once you've run cookiecutter, do:
+
+```shell
+make deps  # to build python and run the tests
+make jupyterlab  # to run jupyterlab
+make lint # to lint your code
+make  # to see what else you can do
+
+```

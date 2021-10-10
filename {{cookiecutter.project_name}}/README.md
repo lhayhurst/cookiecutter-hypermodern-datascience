@@ -25,15 +25,18 @@ Will clean out your install.
 Run `make` to get them: 
 
 ```shell
-make     
+$ make           
 black                          reformat all files for black. good for when someone else needs to read your code.
 clean                          clean up project
 cov                            run test coverage report
+deps                           do a full install. run this first!
 help                           me
+jupyterlab                     run jupyterlab
 lint                           run flake8 linter
 safety                         check for open source vulnerabilities with safety
 test                           run tests after running black check, flake8, and mypy
 thorough                       the full treatment: black check, flake8, mypy, and safety
+
 ```
 
 ## Configuration
@@ -56,7 +59,8 @@ poetry add scipy
 
 ## Running main
 Run ```sh
- PYTHONPATH=src poetry run python -m {{cookiecutter.project_name}} --help
+$ PYTHONPATH=src poetry run python -m {{cookiecutter.project_name}} --help
+
 Usage: python -m {{cookiecutter.project_name}} [OPTIONS] COMMAND [ARGS]...
 
 Options:
